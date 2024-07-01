@@ -1,5 +1,6 @@
 "use client"
 
+import SectionWrapper from '@/app/hoc/SectionWrapper';
 import React, { useState } from 'react'
 import { FaPlaneDeparture } from "react-icons/fa";
 
@@ -32,7 +33,7 @@ const Demo = () => {
   };
 
   return (
-    <div className='flex justify-center relative bg-demo-bg h-screen bg-cover px-8 md:px-32'>
+    <div id="demo" className='flex justify-center relative bg-demo-bg h-screen bg-cover px-8 md:px-32'>
       <div className='absolute inset-0 bg-teal-800/40'></div>
       <div className='z-30 flex flex-col mt-48 md:mt-20 gap-6 items-center'>
         <h1 className='font-semibold text-white text-3xl md:text-5xl text-center'>
@@ -67,4 +68,4 @@ const Demo = () => {
   )
 }
 
-export default Demo
+export default SectionWrapper(Demo, "demo");

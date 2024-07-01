@@ -3,6 +3,7 @@
 import React from 'react'
 import { PlaceholdersAndVanishInput } from '../ui/Placeholder'
 import { motion } from 'framer-motion'
+import SectionWrapper from '@/app/hoc/SectionWrapper'
 
 const Hero = () => {
     const placeholders = [
@@ -20,7 +21,7 @@ const Hero = () => {
       };
 
     return (
-        <div className="px-10 md:px-0 h-screen bg-hero-pattern bg-cover bg-center flex flex-col items-center justify-center">
+        <div id="hero" className="px-10 md:px-0 h-screen bg-hero-pattern bg-cover bg-center flex flex-col items-center justify-center">
             <div className="absolute inset-0 bg-black opacity-50"></div>
             <motion.h2
                 initial={{ opacity: 0 }}
@@ -42,4 +43,4 @@ const Hero = () => {
     )
 }
 
-export default Hero
+export default SectionWrapper(Hero, "hero");

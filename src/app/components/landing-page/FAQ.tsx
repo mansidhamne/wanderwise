@@ -1,9 +1,10 @@
 import React from 'react'
 import FAQCard from '../ui/FAQCard'
+import SectionWrapper from '@/app/hoc/SectionWrapper';
 
 const FAQ = () => {
   return (
-    <div className='flex flex-col md:flex-row px-8 md:px-32 py-20 justify-around'>
+    <div id="faq" className='flex flex-col md:flex-row px-8 md:px-32 py-20 justify-around'>
       <div className='flex flex-col items-center'>
         <h1 className='text-center md:text-left text-3xl font-semibold text-teal-800'>
           Frequently Asked Questions
@@ -21,7 +22,7 @@ const FAQ = () => {
   )
 }
 
-export default FAQ
+export default SectionWrapper(FAQ, "faq");
 
 const faqs = [
   {
