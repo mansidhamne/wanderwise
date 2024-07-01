@@ -65,11 +65,12 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { useMediaQuery } from '@/app/hooks/MediaQueryHook';
 
 const Navbar = () => {
   const [isScrolledDown, setIsScrolledDown] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isMobile = window.innerWidth < 768;
+  const isMobile = useMediaQuery('(min-width: 768px)');
 
   useEffect(() => {
     let previousScroll = 0;
@@ -100,7 +101,7 @@ const Navbar = () => {
         <div className="fixed top-3 md:top-6 left-0 right-0 bg-transparent md:bg-white rounded-full z-10 mx-2 md:mx-32 lg:mx-60">
           <div className="container mx-auto px-2.5 lg:px-6 py-1.5 lg:py-3 flex justify-between items-center">
             <div className="text-lg font-bold">
-              {isMobile ? <img src='/images/logo-white.png' alt="logo" className="w-40"/> : <img src="/images/logo.png" alt="logo" className="w-36"/>}
+              {!isMobile ? <img src='/images/logo-white.png' alt="logo" className="w-40"/> : <img src="/images/logo.png" alt="logo" className="w-36"/>}
             </div>
             <div className="hidden md:flex space-x-4 lg:space-x-8 items-center">
               <Link href="/buddy" className="text-teal-800">Buddy</Link>
