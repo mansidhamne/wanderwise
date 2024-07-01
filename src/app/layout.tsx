@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
@@ -19,6 +20,7 @@ export default function Layout({
       <body className={montserrat.className}>
         <div className="z-10">
           {children}
+          <Analytics />
         </div>
       </body>
     </html>
